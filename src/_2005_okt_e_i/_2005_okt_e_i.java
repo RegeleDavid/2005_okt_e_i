@@ -37,7 +37,10 @@ public class _2005_okt_e_i {
         nyilt=nyilt.toUpperCase();
         int hossz_kulcs=szo2.length();
         for (int i = 0; i < szo.length(); i++) {
-            kulcs+=szo2.charAt(i%hossz_kulcs)+"";
+           // System.out.println(i%hossz_kulcs);
+            char betu=szo2.charAt(i%hossz_kulcs);
+            kulcs+=betu+"";
+           // System.out.println(kulcs);
         }
         kulcs=kulcs.toUpperCase();
         System.out.println(nyilt);
@@ -55,23 +58,23 @@ public class _2005_okt_e_i {
             }
             db++;
         }
-        for (char[] cs : t) {
-            for (char c : cs) {
-                System.out.print(c);
-            }
-            System.out.println();
-        }
+//        for (char[] cs : t) {
+//            for (char c : cs) {
+//                System.out.print(c);
+//            }
+//            System.out.println();
+//        }
         raf.close();
         String kod="";
         for (int i = 0; i < nyilt.length(); i++) {
             int s=0,o=0;
             for (int j = 0; j < tomb.length; j++) {
                 if(tomb[j]==nyilt.charAt(i)){
-                    s=i;
+                    s=j;
                     
                 }
                 if(tomb[j]==kulcs.charAt(i)){
-                    o=i;
+                    o=j;
                 }
             }
             kod+=t[s][o]+"";
